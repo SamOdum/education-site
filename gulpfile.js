@@ -1,7 +1,8 @@
 // Load plugins
 const autoprefixer = require('gulp-autoprefixer'),
     browsersync = require('browser-sync').create(),
-    cssnano = require('cssnano'),
+    htmlmin = require('gulp-htmlmin'),
+    cleanCSS = require('gulp-clean-css'),
     flatten = require('gulp-flatten'),
     header = require('gulp-header'),
     del = require('del'),
@@ -19,7 +20,7 @@ const autoprefixer = require('gulp-autoprefixer'),
     webpack = require('webpack'),
     webpackconfig = require('./webpack.config.js'),
     webpackstream = require('webpack-stream'),
-    reload = browsersync.reload,
+    // reload = browsersync.reload,
     package = require('./package.json'),
     fileversion = `.${package.version}`;
 
@@ -54,11 +55,11 @@ let path = {
 const banner = {
 	full:[
 		'/*!' +
-		' * <%= package.name %> v<%= package.version %>' +
-		' * <%= package.description %>' +
-		' * (c) ' + new Date().getFullYear() + ' <%= package.author.name %>' +
-		' * <%= package.license %> License' +
-		' * <%= package.repository.url %>' +
+		' * <%= package.name %> v<%= package.version %>',
+		' * <%= package.description %>',
+		' * (c) ' + new Date().getFullYear() + ' <%= package.author.name %>',
+		' * <%= package.license %> License',
+		' * <%= package.repository.url %>',
 		' */\n'].join('\n'),
 	min:[
 		'/*!' +
@@ -66,7 +67,7 @@ const banner = {
 		' | (c) ' + new Date().getFullYear() + ' <%= package.author.name %>' +
 		' | <%= package.license %> License' +
 		' | <%= package.repository.url %>' +
-		' */\n'].join(' ')
+		' */']
 };
 // const banner = ['/**',
 //   ' * <%= package.name %> - <%= package.description %>',
@@ -82,6 +83,11 @@ function browserSync(done) {
             baseDir: './app'
         },
     });
+    done();
+}
+
+function reload (done) {
+    browsersync.reload();
     done();
 }
 
@@ -113,7 +119,9 @@ function images(done) {
 
 // HTML
 function html(done) {
-    gulp.watch(path.watch.html, gulp.series(reload));
+    gulp.src(path.src.html)
+        .pipe(htmlmin({ collapseWhitespace: true }))
+        .pipe(gulp.dest(path.build.html));
     done();
 }
 
@@ -138,9 +146,7 @@ function style(done) {
         .pipe(rename({
             suffix: '.min' + fileversion
         }))
-        // .pipe(cssnano({ discardComments: {
-        //     removeAll: true
-        // }}))
+        .pipe(cleanCSS({compatibility: 'ie8'}))
         .pipe(header(banner.min, {package:package}))
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest(path.build.css))
@@ -191,7 +197,7 @@ function scripts(done) {
 
 // Watch files
 function watchFiles(done) {
-    gulp.watch(path.watch.html, gulp.series(html));
+    gulp.watch(path.watch.html, gulp.series(reload));
     gulp.watch(path.watch.style, gulp.series(style));
     gulp.watch(path.watch.js, gulp.series(scriptsLint, scripts));
     gulp.watch(path.watch.img, gulp.series(images));
