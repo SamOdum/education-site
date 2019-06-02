@@ -1,0 +1,166 @@
+.header
+    background-color: #f1e5a8
+    border-bottom: 1px solid $pri-blue
+    z-index: 10
+    width: 100%
+    height: 45px
+    position: fixed
+
+    +at-medium
+        border-bottom: 2px solid $pri-blue
+    
+    &__navbar
+        font-size: 1rem
+        font-weight: 300
+        // align-items: center
+
+        &--logo
+            width: 150px
+            display: flex
+            align-items: center
+
+            &-container
+                display: block
+                width: 45px
+                text-decoration: none
+
+            &-word
+                text-decoration: none
+                display: block
+                margin-left: 10px
+                font-size: 1.2rem
+                font-weight: 800
+
+            &-word:visited
+                color: $pri-blue
+
+        &--toggle
+            display: none //enable after tests
+
+        &--toggle-bar::before
+            content: ''
+            position: absolute
+            top: -6px
+            width: 20px
+            height: 2px
+            background-color: $pri-blue
+
+        &--toggle-bar
+            display: inline-block
+            position: absolute
+            top: 20px
+            right: calc((3%) + 20px) //30px
+            width: 20px
+            height: 2px
+            background-color: $pri-blue
+
+        &--toggle-bar::after
+            content: ''
+            position: absolute
+            top: 7px
+            width: 20px
+            height: 2px
+            background-color: $pri-blue
+
+        &--navigation-container
+            list-style-type: none
+            background-color: $pri-blue
+            height: 0px
+            transition: all 0.5s
+            overflow: hidden
+            // border-right: 1px solid $pri-light
+            // border-bottom: 1px solid $pri-light
+            // border-left: 1px solid $pri-light
+
+        // &--toggle:checked + .header__navbar--navigation-container
+        //     opacity: 1
+        //     height: 190px
+        //     transition: all 0.5s
+
+        &--link-container
+            cursor: pointer
+            margin: 0 auto
+            text-align: center
+
+            &:first-child
+                padding-top: 10px
+        
+        &--link
+            text-decoration: none
+            display: block
+            padding: 8px
+            color: $pri-light
+
+        // &--link:hover
+        //     background-color: $pri-blue
+        //     color: $pri-light
+            // transition: all 0.3s
+
+        &--link:visited
+            color: $pri-light
+
+.is-open
+    opacity: 1
+    height: 190px
+    transition: all 0.5s
+
++at-medium
+    .header 
+        height: 52px
+        line-height: 52px
+        // position: fixed;
+        
+        &__navbar
+            font-size: 1.125em
+            font-weight: 100
+            display: flex
+            justify-content: space-between
+
+            &--logo
+                width: 200px
+                display: flex
+
+                &-container
+                    width: 50px
+
+                &-word
+                    font-size: 1.2em
+                    font-weight: 800
+
+            &--navigation-container
+                display: flex
+                flex-direction: row
+                justify-content: flex-end
+                list-style-type: none
+                background-color: transparent
+                height: auto
+                opacity: 1
+
+            &--link
+                text-decoration: none
+                padding: 0
+            &--link:hover
+                background-color: $pri-light
+                color: $pri-blue
+
+            &--link:visited
+                color: $pri-blue
+            
+                    
+            &--link-container
+                margin-left: 40px
+
+                &:first-child
+                    padding-top: 0
+        
+            &--toggle,
+            &--toggle-label
+                display: none
+        
+            &--toggle-bar
+                position: absolute
+                top: 22px
+                right: 30px
+                width: 18px
+                height: 2px
+                background-color: $pri-blue

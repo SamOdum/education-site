@@ -1,0 +1,294 @@
+/**
+ * education - site built for an educational institute
+ * @version v1.0.0
+ * @link 
+ * @license MIT
+ */
+/**
+ * education - site built for an educational institute
+ * @version v1.0.0
+ * @link 
+ * @license MIT
+ */
+/* line 1, app/src/style/base/_global.sass */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 6, app/src/style/base/_global.sass */
+html,
+body {
+  font-family: 'Minion Pro', sans-serif;
+  color: #2e358e;
+  height: 100%;
+}
+
+/* line 12, app/src/style/base/_global.sass */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* line 17, app/src/style/base/_global.sass */
+a {
+  text-decoration: none;
+}
+
+/* line 1, app/src/style/base/_container.sass */
+.container {
+  padding-left: 1.125rem;
+  padding-right: 1.125rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 94%;
+}
+
+/* line 15, app/src/style/base/_container.sass */
+.cover-1,
+.cover-2,
+.cover-3 {
+  background-color: #f1e5a8;
+  background-size: cover;
+  background-attachment: fixed;
+  color: #2e358e;
+  height: 100%;
+}
+
+/* line 25, app/src/style/base/_container.sass */
+.cover-2 {
+  background-color: #2e358e;
+  color: #f1e5a8;
+}
+
+/* line 29, app/src/style/base/_container.sass */
+.cover-3 {
+  background-color: #f1e5a8;
+  color: #2e358e;
+}
+
+/* line 1, app/src/style/modules/_header.sass */
+.header {
+  background-color: #f1e5a8;
+  border-bottom: 1px solid #2e358e;
+  z-index: 10;
+  width: 100%;
+  height: 45px;
+  position: fixed;
+}
+
+@media (min-width: 768px) {
+  /* line 1, app/src/style/modules/_header.sass */
+  .header {
+    border-bottom: 2px solid #2e358e;
+  }
+}
+
+/* line 12, app/src/style/modules/_header.sass */
+.header__navbar {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+/* line 17, app/src/style/modules/_header.sass */
+.header__navbar--logo {
+  width: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* line 22, app/src/style/modules/_header.sass */
+.header__navbar--logo-container {
+  display: block;
+  width: 45px;
+  text-decoration: none;
+}
+
+/* line 27, app/src/style/modules/_header.sass */
+.header__navbar--logo-word {
+  text-decoration: none;
+  display: block;
+  margin-left: 10px;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+/* line 34, app/src/style/modules/_header.sass */
+.header__navbar--logo-word:visited {
+  color: #2e358e;
+}
+
+/* line 37, app/src/style/modules/_header.sass */
+.header__navbar--toggle {
+  display: none;
+}
+
+/* line 40, app/src/style/modules/_header.sass */
+.header__navbar--toggle-bar::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  width: 20px;
+  height: 2px;
+  background-color: #2e358e;
+}
+
+/* line 48, app/src/style/modules/_header.sass */
+.header__navbar--toggle-bar {
+  display: inline-block;
+  position: absolute;
+  top: 20px;
+  right: calc((3%) + 20px);
+  width: 20px;
+  height: 2px;
+  background-color: #2e358e;
+}
+
+/* line 57, app/src/style/modules/_header.sass */
+.header__navbar--toggle-bar::after {
+  content: '';
+  position: absolute;
+  top: 7px;
+  width: 20px;
+  height: 2px;
+  background-color: #2e358e;
+}
+
+/* line 65, app/src/style/modules/_header.sass */
+.header__navbar--navigation-container {
+  list-style-type: none;
+  background-color: #2e358e;
+  height: 0px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  overflow: hidden;
+}
+
+/* line 80, app/src/style/modules/_header.sass */
+.header__navbar--link-container {
+  cursor: pointer;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* line 85, app/src/style/modules/_header.sass */
+.header__navbar--link-container:first-child {
+  padding-top: 10px;
+}
+
+/* line 88, app/src/style/modules/_header.sass */
+.header__navbar--link {
+  text-decoration: none;
+  display: block;
+  padding: 8px;
+  color: #f1e5a8;
+}
+
+/* line 99, app/src/style/modules/_header.sass */
+.header__navbar--link:visited {
+  color: #f1e5a8;
+}
+
+/* line 102, app/src/style/modules/_header.sass */
+.is-open {
+  opacity: 1;
+  height: 190px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+@media (min-width: 768px) {
+  /* line 108, app/src/style/modules/_header.sass */
+  .header {
+    height: 52px;
+    line-height: 52px;
+  }
+  /* line 113, app/src/style/modules/_header.sass */
+  .header__navbar {
+    font-size: 1.125em;
+    font-weight: 100;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  /* line 119, app/src/style/modules/_header.sass */
+  .header__navbar--logo {
+    width: 200px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  /* line 123, app/src/style/modules/_header.sass */
+  .header__navbar--logo-container {
+    width: 50px;
+  }
+  /* line 126, app/src/style/modules/_header.sass */
+  .header__navbar--logo-word {
+    font-size: 1.2em;
+    font-weight: 800;
+  }
+  /* line 130, app/src/style/modules/_header.sass */
+  .header__navbar--navigation-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    list-style-type: none;
+    background-color: transparent;
+    height: auto;
+    opacity: 1;
+  }
+  /* line 139, app/src/style/modules/_header.sass */
+  .header__navbar--link {
+    text-decoration: none;
+    padding: 0;
+  }
+  /* line 142, app/src/style/modules/_header.sass */
+  .header__navbar--link:hover {
+    background-color: #f1e5a8;
+    color: #2e358e;
+  }
+  /* line 146, app/src/style/modules/_header.sass */
+  .header__navbar--link:visited {
+    color: #2e358e;
+  }
+  /* line 150, app/src/style/modules/_header.sass */
+  .header__navbar--link-container {
+    margin-left: 40px;
+  }
+  /* line 153, app/src/style/modules/_header.sass */
+  .header__navbar--link-container:first-child {
+    padding-top: 0;
+  }
+  /* line 156, app/src/style/modules/_header.sass */
+  .header__navbar--toggle, .header__navbar--toggle-label {
+    display: none;
+  }
+  /* line 160, app/src/style/modules/_header.sass */
+  .header__navbar--toggle-bar {
+    position: absolute;
+    top: 22px;
+    right: 30px;
+    width: 18px;
+    height: 2px;
+    background-color: #2e358e;
+  }
+}
+
+/*# sourceMappingURL=main.min.1.0.0.css.map */
