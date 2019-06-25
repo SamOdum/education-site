@@ -67,27 +67,19 @@ a {
 /* line 1, app/src/style/modules/_header.sass */
 .header {
   background-color: #f1e5a8;
-  border-bottom: 1px solid #2e358e;
-  z-index: 10;
+  z-index: 2;
   width: 100%;
   height: 45px;
-  position: fixed;
+  line-height: 44px;
 }
 
-@media (min-width: 768px) {
-  /* line 1, app/src/style/modules/_header.sass */
-  .header {
-    border-bottom: 2px solid #2e358e;
-  }
-}
-
-/* line 12, app/src/style/modules/_header.sass */
+/* line 13, app/src/style/modules/_header.sass */
 .header__navbar {
   font-size: 1rem;
   font-weight: 300;
 }
 
-/* line 17, app/src/style/modules/_header.sass */
+/* line 18, app/src/style/modules/_header.sass */
 .header__navbar--logo {
   width: 150px;
   display: -webkit-box;
@@ -98,14 +90,14 @@ a {
           align-items: center;
 }
 
-/* line 22, app/src/style/modules/_header.sass */
+/* line 23, app/src/style/modules/_header.sass */
 .header__navbar--logo-container {
   display: block;
   width: 45px;
   text-decoration: none;
 }
 
-/* line 27, app/src/style/modules/_header.sass */
+/* line 28, app/src/style/modules/_header.sass */
 .header__navbar--logo-word {
   text-decoration: none;
   display: block;
@@ -114,17 +106,17 @@ a {
   font-weight: 800;
 }
 
-/* line 34, app/src/style/modules/_header.sass */
+/* line 35, app/src/style/modules/_header.sass */
 .header__navbar--logo-word:visited {
   color: #2e358e;
 }
 
-/* line 37, app/src/style/modules/_header.sass */
+/* line 38, app/src/style/modules/_header.sass */
 .header__navbar--toggle {
   display: none;
 }
 
-/* line 40, app/src/style/modules/_header.sass */
+/* line 41, app/src/style/modules/_header.sass */
 .header__navbar--toggle-bar::before {
   content: '';
   position: absolute;
@@ -134,18 +126,18 @@ a {
   background-color: #2e358e;
 }
 
-/* line 48, app/src/style/modules/_header.sass */
+/* line 49, app/src/style/modules/_header.sass */
 .header__navbar--toggle-bar {
   display: inline-block;
   position: absolute;
   top: 20px;
-  right: calc((3%) + 20px);
+  right: calc((3%) + 18px);
   width: 20px;
   height: 2px;
   background-color: #2e358e;
 }
 
-/* line 57, app/src/style/modules/_header.sass */
+/* line 58, app/src/style/modules/_header.sass */
 .header__navbar--toggle-bar::after {
   content: '';
   position: absolute;
@@ -155,7 +147,7 @@ a {
   background-color: #2e358e;
 }
 
-/* line 65, app/src/style/modules/_header.sass */
+/* line 66, app/src/style/modules/_header.sass */
 .header__navbar--navigation-container {
   list-style-type: none;
   background-color: #2e358e;
@@ -165,19 +157,25 @@ a {
   overflow: hidden;
 }
 
-/* line 80, app/src/style/modules/_header.sass */
+/* line 81, app/src/style/modules/_header.sass */
 .header__navbar--link-container {
   cursor: pointer;
   margin: 0 auto;
   text-align: center;
+  line-height: 24px;
 }
 
-/* line 85, app/src/style/modules/_header.sass */
+/* line 87, app/src/style/modules/_header.sass */
 .header__navbar--link-container:first-child {
   padding-top: 10px;
 }
 
-/* line 88, app/src/style/modules/_header.sass */
+/* line 89, app/src/style/modules/_header.sass */
+.header__navbar--link-container:last-child {
+  padding-bottom: 10px;
+}
+
+/* line 92, app/src/style/modules/_header.sass */
 .header__navbar--link {
   text-decoration: none;
   display: block;
@@ -185,26 +183,26 @@ a {
   color: #f1e5a8;
 }
 
-/* line 99, app/src/style/modules/_header.sass */
+/* line 103, app/src/style/modules/_header.sass */
 .header__navbar--link:visited {
   color: #f1e5a8;
 }
 
-/* line 102, app/src/style/modules/_header.sass */
+/* line 106, app/src/style/modules/_header.sass */
 .is-open {
   opacity: 1;
-  height: 190px;
+  height: 260px;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
 
 @media (min-width: 768px) {
-  /* line 108, app/src/style/modules/_header.sass */
+  /* line 112, app/src/style/modules/_header.sass */
   .header {
-    height: 52px;
-    line-height: 52px;
+    height: 62px;
+    line-height: 62px;
   }
-  /* line 113, app/src/style/modules/_header.sass */
+  /* line 117, app/src/style/modules/_header.sass */
   .header__navbar {
     font-size: 1.125em;
     font-weight: 100;
@@ -214,24 +212,27 @@ a {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
-  /* line 119, app/src/style/modules/_header.sass */
+  /* line 124, app/src/style/modules/_header.sass */
   .header__navbar--logo {
     width: 200px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
-  /* line 123, app/src/style/modules/_header.sass */
+  /* line 128, app/src/style/modules/_header.sass */
   .header__navbar--logo-container {
     width: 50px;
   }
-  /* line 126, app/src/style/modules/_header.sass */
+  /* line 131, app/src/style/modules/_header.sass */
   .header__navbar--logo-word {
     font-size: 1.2em;
     font-weight: 800;
   }
-  /* line 130, app/src/style/modules/_header.sass */
+  /* line 135, app/src/style/modules/_header.sass */
   .header__navbar--navigation-container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -243,38 +244,46 @@ a {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     list-style-type: none;
     background-color: transparent;
     height: auto;
     opacity: 1;
   }
-  /* line 139, app/src/style/modules/_header.sass */
+  /* line 145, app/src/style/modules/_header.sass */
   .header__navbar--link {
     text-decoration: none;
     padding: 0;
   }
-  /* line 142, app/src/style/modules/_header.sass */
+  /* line 149, app/src/style/modules/_header.sass */
   .header__navbar--link:hover {
     background-color: #f1e5a8;
     color: #2e358e;
   }
-  /* line 146, app/src/style/modules/_header.sass */
+  /* line 153, app/src/style/modules/_header.sass */
   .header__navbar--link:visited {
     color: #2e358e;
   }
-  /* line 150, app/src/style/modules/_header.sass */
+  /* line 157, app/src/style/modules/_header.sass */
   .header__navbar--link-container {
     margin-left: 40px;
+    line-height: unset;
   }
-  /* line 153, app/src/style/modules/_header.sass */
+  /* line 161, app/src/style/modules/_header.sass */
   .header__navbar--link-container:first-child {
     padding-top: 0;
   }
-  /* line 156, app/src/style/modules/_header.sass */
+  /* line 163, app/src/style/modules/_header.sass */
+  .header__navbar--link-container:last-child {
+    padding-bottom: 0;
+  }
+  /* line 166, app/src/style/modules/_header.sass */
   .header__navbar--toggle, .header__navbar--toggle-label {
     display: none;
   }
-  /* line 160, app/src/style/modules/_header.sass */
+  /* line 170, app/src/style/modules/_header.sass */
   .header__navbar--toggle-bar {
     position: absolute;
     top: 22px;
@@ -283,4 +292,163 @@ a {
     height: 2px;
     background-color: #2e358e;
   }
+}
+
+/* line 1, app/src/style/modules/_header-animation.sass */
+h2 > a {
+  position: relative;
+  color: #000;
+  text-decoration: none;
+}
+
+/* line 7, app/src/style/modules/_header-animation.sass */
+h2 > a:hover {
+  color: #000;
+}
+
+/* line 10, app/src/style/modules/_header-animation.sass */
+h2 > a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+/* line 24, app/src/style/modules/_header-animation.sass */
+h2 > a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+/* Fading animation */
+/* line 2, app/src/style/modules/_animation.sass */
+.fade {
+  -webkit-animation-name: fade;
+          animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  0% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* line 1, app/src/style/modules/_large-hero.sass */
+.large-hero {
+  position: relative;
+  background-color: #000000;
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* line 7, app/src/style/modules/_large-hero.sass */
+.large-hero:before {
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.2;
+  background-image: url("../../src/img/Path 1@2x.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* line 23, app/src/style/modules/_large-hero.sass */
+.large-hero__carousel-container {
+  position: relative;
+  max-width: 60%;
+  margin: 0 auto;
+  z-index: 3;
+  top: 35%;
+}
+
+/* line 31, app/src/style/modules/_large-hero.sass */
+.large-hero__carousel-content {
+  text-align: center;
+  display: none;
+}
+
+/* line 35, app/src/style/modules/_large-hero.sass */
+.large-hero__carousel--heading {
+  color: #ffffff;
+  font-size: 3.5rem;
+}
+
+/* line 39, app/src/style/modules/_large-hero.sass */
+.large-hero__carousel--paragraph {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-top: 15px;
+  margin-bottom: 40px;
+}
+
+/* line 46, app/src/style/modules/_large-hero.sass */
+.large-hero__carousel--button {
+  background-color: #00ff00;
+  color: #ffffff;
+  padding: 15px 25px;
+  font-size: 1.2rem;
+  font-weight: 300;
+  outline: none;
+  border-radius: 40px;
+}
+
+/* line 55, app/src/style/modules/_large-hero.sass */
+.large-hero__carousel-buttons {
+  text-align: center;
+  position: relative;
+  top: 50%;
+  margin: 0 auto;
+}
+
+/* line 61, app/src/style/modules/_large-hero.sass */
+.dot {
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  margin: 0 2px;
+  border: 3px solid #00ff00;
+  background-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  -webkit-transition: background-color 0.6s ease;
+  transition: background-color 0.6s ease;
+}
+
+/* line 72, app/src/style/modules/_large-hero.sass */
+.dot:hover, .dot.selected {
+  background-color: #717171;
+}
+
+/* line 75, app/src/style/modules/_large-hero.sass */
+.active {
+  display: block;
 }

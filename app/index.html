@@ -1,37 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<link rel="stylesheet" href="./build/css/main.min.0.1.0.css" />
+	</head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="./build/css/main.min.0.1.0.css">
-</head>
-
-<body>
-    <header class="header">
-        <nav class="header__navbar container">
-            <div class="header__navbar--logo">
-                <a class="header__navbar--logo-container" href="./index.html">
-                    <img src="./src/img/logo.png" alt="education-logo">
-                </a>
-                <a class="header__navbar--logo-word" href="./index.html">Education</a>
-            </div>
-            <label for="header__navbar--toggle" class="header__navbar--toggle-label">
-                <span class="header__navbar--toggle-bar"></span>
-            </label>
-            <input type="checkbox" id="header__navbar--toggle" class="header__navbar--toggle">
-            <ul class="header__navbar--navigation-container">
-                <li class="header__navbar--link-container"><a class="header__navbar--link" href="#">Home</a></li>
-                <li class="header__navbar--link-container"><a class="header__navbar--link" href="#">About Us</a></li>
-                <li class="header__navbar--link-container"><a class="header__navbar--link" href="#">Courses</a></li>
-                <li class="header__navbar--link-container"><a class="header__navbar--link" href="#">Teachers</a></li>
-                <li class="header__navbar--link-container"><a class="header__navbar--link" href="#">Programs</a></li>
-                <li class="header__navbar--link-container"><a class="header__navbar--link" href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-</body>
-
+	<body>
+		<section class="large-hero">
+			<header class="header">
+				<nav class="header__navbar container">
+					<div class="header__navbar--logo">
+						<a class="header__navbar--logo-container" href="./index.html">
+							<img src="./src/img/logo.png" alt="education-logo" />
+						</a>
+						<a class="header__navbar--logo-word" href="./index.html">Education</a>
+					</div>
+					<label for="header__navbar--toggle" class="header__navbar--toggle-label">
+						<span class="header__navbar--toggle-bar"></span>
+					</label>
+					<input
+						type="checkbox"
+						id="header__navbar--toggle"
+						class="header__navbar--toggle"
+					/>
+					<ul class="header__navbar--navigation-container">
+						<li class="header__navbar--link-container">
+							<a class="header__navbar--link" href="#">Home</a>
+						</li>
+						<li class="header__navbar--link-container">
+							<a class="header__navbar--link" href="#">About Us</a>
+						</li>
+						<li class="header__navbar--link-container">
+							<a class="header__navbar--link" href="#">Courses</a>
+						</li>
+						<li class="header__navbar--link-container">
+							<a class="header__navbar--link" href="#">Teachers</a>
+						</li>
+						<li class="header__navbar--link-container">
+							<a class="header__navbar--link" href="#">Programs</a>
+						</li>
+						<li class="header__navbar--link-container">
+							<a class="header__navbar--link" href="#">Contact</a>
+						</li>
+					</ul>
+				</nav>
+			</header>
+			<article class="large-hero__carousel-container">
+				<div class="large-hero__carousel-content fade">
+					<h1 class="large-hero__carousel--heading">Knowlege is power</h1>
+					<p class="large-hero__carousel--paragraph">
+						Any successful career starts with good education
+					</p>
+					<a href="#" class="large-hero__carousel--button">Learn more</a>
+				</div>
+				<div class="large-hero__carousel-content fade">
+					<h1 class="large-hero__carousel--heading">Cutting-edge instruction</h1>
+					<p class="large-hero__carousel--paragraph">
+						Our faculty boasts of proffesors redefining the landscape
+					</p>
+					<a href="#" class="large-hero__carousel--button">Learn more</a>
+				</div>
+				<div class="large-hero__carousel-content fade active">
+					<h1 class="large-hero__carousel--heading">Choice empowers</h1>
+					<p class="large-hero__carousel--paragraph">
+						More than a few dozen courses are available to you
+					</p>
+					<a href="#" class="large-hero__carousel--button">Learn more</a>
+				</div>
+				<div class="large-hero__carousel-content fade">
+					<h1 class="large-hero__carousel--heading">Education has changed</h1>
+					<p class="large-hero__carousel--paragraph">
+						The modern world has enhanced the face of education
+					</p>
+					<a href="#" class="large-hero__carousel--button">Learn more</a>
+				</div>
+			</article>
+			<div class="large-hero__carousel-buttons">
+				<span class="dot"></span>
+				<span class="dot"></span>
+				<span class="dot"></span>
+				<span class="dot"></span>
+			</div>
+		</section>
+		<section class="cover-2"></section>
+		<script src="./build/js/App.js"></script>
+	</body>
 </html>

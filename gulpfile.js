@@ -2,6 +2,7 @@
 const autoprefixer = require('gulp-autoprefixer'),
     browsersync = require('browser-sync').create(),
     htmlmin = require('gulp-htmlmin'),
+    babel = require('gulp-babel'),
     cleanCSS = require('gulp-clean-css'),
     flatten = require('gulp-flatten'),
     header = require('gulp-header'),
@@ -147,7 +148,7 @@ function style(done) {
             suffix: '.min' + fileversion
         }))
         .pipe(cleanCSS({compatibility: 'ie8'}))
-        .pipe(header(banner.min, {package:package}))
+        .pipe(header(banner.min, { package : package }))
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest(path.build.css))
         .pipe(browsersync.stream());
@@ -187,6 +188,9 @@ function scriptsLint(done) {
 // Transpile, concatenate and minify scripts
 function scripts(done) {
     gulp.src(path.src.js)
+        .pipe(babel({
+            presets: ['@babel/preset-env']
+        }))
         .pipe(plumber())
         .pipe(webpackstream(webpackconfig, webpack))
         // folder only, filename is specified in webpack config
@@ -197,11 +201,11 @@ function scripts(done) {
 
 // Watch files
 function watchFiles(done) {
-    gulp.watch(path.watch.html, gulp.series(reload));
     gulp.watch(path.watch.style, gulp.series(style));
     gulp.watch(path.watch.js, gulp.series(scriptsLint, scripts));
     gulp.watch(path.watch.img, gulp.series(images));
     gulp.watch(path.watch.icon, gulp.series(sprites));
+    gulp.watch(path.watch.html, gulp.series(reload));
     done();
 }
 
