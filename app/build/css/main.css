@@ -146,7 +146,7 @@ a {
 /* line 69, app/src/style/modules/_header.sass */
 .header__navbar--navigation-container {
   list-style-type: none;
-  background-color: #2e358e;
+  background-color: #27AE61;
   height: 0px;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
@@ -177,11 +177,6 @@ a {
   display: block;
   padding: 8px;
   color: #ffffff;
-}
-
-/* line 106, app/src/style/modules/_header.sass */
-.header__navbar--link:visited {
-  color: #f1e5a8;
 }
 
 /* line 109, app/src/style/modules/_header.sass */
@@ -343,7 +338,7 @@ a {
   width: 100%;
   height: 100%;
   z-index: 1;
-  opacity: 0.2;
+  opacity: 0.1;
   background-image: url("../../src/img/Path 1@2x.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -428,4 +423,33 @@ a {
 /* line 83, app/src/style/modules/_large-hero.sass */
 .active {
   display: block;
+}
+
+/* line 1, app/src/style/modules/_second-page.sass */
+.second-page {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+/* line 8, app/src/style/modules/_second-page.sass */
+.second-page__image-container {
+  width: 48.717948717948717948717948717949%;
+}
+
+/* line 11, app/src/style/modules/_second-page.sass */
+.second-page__text-container {
+  width: 40.17094017094017094017094017094%;
+  height: auto;
 }
