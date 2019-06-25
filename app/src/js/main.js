@@ -1,31 +1,3 @@
-/* Created by Sam Odum for Sam Odum (c) 2017 */
-
-/* ==== Greeting ==== */
-
-//Create a new date object
-// Find the current hour
-// Display the appropriate greeting based on the current time
-
-const today = new Date();
-const hourNow = today.getHours();
-
-const greeting = hourNow => {
-    let greet;
-    
-    if (hourNow >= 16)
-    greet = 'Good evening.';
-    else if (hourNow >= 12) 
-    greet = 'Good afternoon.';
-    else if (hourNow > 0) 
-    greet = 'Good morning.';
-    
-    return greet;
-}
-
-
-// document.getElementById('greeting').textContent = greeting();
-
-
 /* ==== Drop Mobile Nav ==== */
 
 //Link to navbar toggle input
@@ -55,79 +27,65 @@ document.addEventListener('click', function(e) {
   // return toggler.classList.toggle('is-open');
 });
 
-
 //Carousel manual slide
-let slideIndex = 1;
 let slides = document.querySelectorAll(".large-hero__carousel-content");
 let dots = document.querySelectorAll(".dot");
-showSlides(slideIndex);
-
-slides.forEach(slide=>{
-  slide.addEventListener('click', console.log('clicked'))
-})
-
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  let i;
-  if (n > slides.length) {slideIndex = 1} 
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].classList.remove('active'); 
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" selected", "");
-  }
-  slides[slideIndex-1].classList.add('active'); 
-  dots[slideIndex-1].className += " selected";
-}
-
+// showSlides(slideIndex);
 
 //Automatic Carousel slide
-// let slideIndex = 0;
-// showSlides();
+let slideIndex = 0;
+showSlides();
 
-// function showSlides() {
+ function showSlides() {
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].classList.remove("active"); 
+    dots[i].classList.remove("selected"); 
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1} 
+  slides[slideIndex-1].classList.add("active"); 
+  dots[slideIndex-1].classList.add("selected"); 
+  setTimeout(showSlides, 5000); // Change image every 2 seconds
+};
+
+dots.forEach((dot, index)=>{
+  dot.addEventListener('click',()=>{
+    for (let i=0; i<dots.length; i++){
+      dots[i].classList.remove('selected');
+      slides[i].classList.remove('active');
+    }
+    dot.classList.add('selected');
+
+    matchSlide();
+  })
+})
+
+
+function matchSlide() {
+  for (let j = 0; j < slides.length; j++) {
+    if (dots[j].classList.contains('selected')) {
+      slides[j].classList.add('active');
+      slideIndex = j;
+    }
+  }
+}
+// //Thumbnail image controls
+// function currentSlide(n) {
+//   showSlides(slideIndex = n);
+// }
+
+// function showSlides(n) {
 //   let i;
-//   let slides = document.getElementsByClassName("large-hero__carousel-content");
+//   if (n > slides.length) {slideIndex = 1} 
+//   if (n < 1) {slideIndex = slides.length}
 //   for (i = 0; i < slides.length; i++) {
-//     slides[i].classList.remove(".active"); 
+//       slides[i].classList.remove('active'); 
 //   }
-//   slideIndex++;
-//   if (slideIndex > slides.length) {slideIndex = 1} 
-//   slides[slideIndex-1].classList.add(".active"); 
-//   setTimeout(showSlides, 2000); // Change image every 2 seconds
-// }
-
-
-
-
-
-// /* When the user clicks on the button,
-// toggle between hiding and showing the dropdown content */
-// function myFunction() {
-//     document.getElementById("myDropdown").classList.toggle("show");
-// }
-
-// // Close the dropdown menu if the user clicks outside of it
-// window.onclick = function(event) {
-//   if (!event.target.matches('.dropbtn')) {
-
-//     var dropdowns = document.getElementsByClassName("dropdown-content");
-//     var i;
-//     for (i = 0; i < dropdowns.length; i++) {
-//       var openDropdown = dropdowns[i];
-//       if (openDropdown.classList.contains('show')) {
-//         openDropdown.classList.remove('show');
-//       }
-//     }
+//   for (i = 0; i < dots.length; i++) {
+//       dots[i].className = dots[i].className.replace("selected", "");
 //   }
-// };
-
-// //Hambuger Animation
-// function myFunction(x) {
-//     x.classList.toggle("change");
+//   slides[slideIndex-1].classList.add('active'); 
+//   dots[slideIndex-1].className += "selected";
 // }
+
+
