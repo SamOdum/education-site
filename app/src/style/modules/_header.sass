@@ -1,19 +1,19 @@
 .header
     background-color: transparent
+    color: $pri-white
     // border-bottom: 1px solid $pri-blue
-    z-index: $level-2
+    z-index: $level-10
     width: 100%
     height: 45px
     position: fixed
     line-height: 44px
-    margin-top: 1.5%
 
     +at-medium
         // border-bottom: 2px solid $pri-blue
     
     &__navbar
-        font-size: 1rem
-        font-weight: 300
+        // font-size: 1rem
+        // font-weight: 300
         // align-items: center
 
         &--logo
@@ -27,11 +27,13 @@
                 text-decoration: none
 
             &-word
+                font-family: $sec-font
                 text-decoration: none
                 display: block
                 margin-left: 10px
                 font-size: 1.2rem
                 font-weight: 800
+                color: $pri-white
 
             &-word:visited
                 color: $pri-white
@@ -51,7 +53,7 @@
             display: inline-block
             position: absolute
             top: 20px
-            right: calc((3%) + 18px) //30px (fullWidth-containerWidth)/2+barWidth
+            right: calc(9.375%) //30px (fullWidth-containerWidth)/2
             width: 20px
             height: 2px
             background-color: $pri-white
@@ -111,13 +113,14 @@
 
 +at-medium
     .header 
-        height: 62px
-        line-height: 62px
-        // position: fixed;
+        // height: 62px
+        // line-height: 62px
+        position: relative
+        margin-top: 2.4%
         
         &__navbar
-            font-size: 1.125em
-            font-weight: 100
+            // font-size: 1.125em
+            // font-weight: 100
             display: flex
             justify-content: space-between
             align-items: center
@@ -127,10 +130,11 @@
                 display: flex
 
                 &-container
-                    width: 50px
+                    width: 40px
 
                 &-word
-                    font-size: 1.2em
+                    font-family: $sec-font
+                    font-size: 24px
                     font-weight: 800
 
             &--navigation-container
@@ -145,6 +149,8 @@
 
             &--link
                 text-decoration: none
+                font-family: $sec-font
+                font-size: 18px
                 padding: 0
                 border-bottom-width: 2px 
                 border-bottom-style: solid 
@@ -164,7 +170,7 @@
             
                     
             &--link-container
-                margin-left: 40px
+                margin-left: 39px
                 line-height: unset
 
                 &:first-child
