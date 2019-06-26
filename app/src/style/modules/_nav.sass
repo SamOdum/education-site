@@ -1,0 +1,90 @@
+.navbar 
+    font-size: 1.125em
+    background-image: linear-gradient(260deg, #2376ae 0%, #c16ecf 100%)
+    border: 0.063em solid rgba(0, 0, 0, 0.2)
+    padding-bottom: 0.6em
+    width: 100%
+    position: absolute
+
+
+.navbar__navigation 
+    list-style-type: none
+    /* opacity: 0; */
+    height: 0px
+    transition: all .5s
+    overflow: hidden
+
+
+.navbar__navigation-link,
+.navbar__logo 
+    text-decoration: none
+    color: rgba(255, 255, 255, 0.7)
+
+
+.navbar__navigation-link-container 
+    text-align: center
+    margin: 15px auto
+
+
+.navbar__logo 
+    display: inline-block
+    font-size: 22px
+    margin-top: 10px
+    margin-left: 20px
+    /*** Remove this rule if wrapped in a container***/
+
+
+.navbar__toggle 
+    position: absolute
+    top: 10px
+    right: 20px
+    cursor: pointer
+    color: rgba(255, 255, 255, 0.8)
+    font-size: 24px
+
+
+.navbar__check-toggle 
+    display: none
+
+
+.navbar__check-toggle:checked+.navbar__navigation 
+    opacity: 1
+    height: 190px
+    transition: all .5s
+
+
+@media screen and (min-width: 768px) 
+    .navbar 
+        display: flex
+        justify-content: space-between
+        padding: 15px 0px
+        align-items: center
+    
+    .navbar__check-toggle:checked+.navbar__navigation 
+        display: flex
+    
+    .navbar__navigation 
+        display: flex
+        margin-right: 20px
+        /*** Remove this rule if wrapped in a container***/
+        flex-direction: row
+        justify-content: flex-end
+        height: auto
+        opacity: 1
+    
+    .navbar__navigation-link-container 
+        margin: 0
+    
+    .navbar__navigation-link 
+        margin-left: 40px
+    
+    .navbar__logo 
+        margin-top: 0
+    
+    .navbar__toggle 
+        display: none
+    
+    .navbar__logo:hover,
+    .navbar__navigation-link:hover 
+        color: rgba(255, 255, 255, 1)
+    
